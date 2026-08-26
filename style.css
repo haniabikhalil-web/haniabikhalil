@@ -694,6 +694,49 @@ footer {
   gap: 10px;
 }
 
+/* ---------- About Me: Personal / Professional tabs ---------- */
+.tab-switch {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 0 auto 64px;
+}
+.tab-btn {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 12px 32px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'Inter', sans-serif;
+}
+.tab-btn:hover { border-color: var(--accent-dark); color: var(--text); }
+.tab-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #2c2b28;
+}
+
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+.lede-text {
+  max-width: 760px;
+  margin: 0 auto 70px;
+}
+.lede-text p { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 16px; }
+
+.gallery-grid {
+  max-width: 900px;
+  margin: 56px auto 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width: 860px) {
   .intro-grid { grid-template-columns: 1fr; }
@@ -707,6 +750,8 @@ footer {
   .personal-grid { grid-template-columns: 1fr; }
   .personal-photos { order: -1; max-width: 360px; margin: 0 auto; }
   .project-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: 1fr 1fr; }
+  .tab-btn { padding: 10px 22px; font-size: 0.85rem; }
 }
 
 @media (max-width: 720px) {

@@ -8,6 +8,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // ---------- Personal / Professional tabs (About page only) ----------
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  const tabPanels = document.querySelectorAll('.tab-panel');
+  if (tabBtns.length && tabPanels.length) {
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.getAttribute('data-tab');
+        tabBtns.forEach(b => b.classList.toggle('active', b === btn));
+        tabPanels.forEach(p => p.classList.toggle('active', p.id === target));
+      });
+    });
+  }
+
   // ---------- World map (About page only) ----------
   const mapEl = document.getElementById('world-map');
   if (mapEl && window.jsVectorMap) {
