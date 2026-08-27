@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
         regions: [{
           attribute: 'fill',
           values: values,
-          scale: ['#8a95a5', '#d9b98a'],
+          scale: ['#e3c9a0', '#5c3d24'],
           normalizeFunction: 'linear',
           min: 1,
           max: 2

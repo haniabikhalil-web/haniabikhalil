@@ -13,7 +13,9 @@
   --text-muted: #6b6862;
   --accent: #d9b98a;       /* warm tan */
   --accent-dark: #b8935f;
-  --slate: #8a95a5;        /* muted blue-grey for "visited" */
+  --slate: #8a95a5;        /* muted blue-grey, unused by map now */
+  --beige: #e3c9a0;        /* map: visited */
+  --dark-brown: #5c3d24;   /* map: lived in */
   --border: #e6e2da;
   --max-width: 1120px;
   --radius: 6px;
@@ -366,8 +368,8 @@ section.page-section {
   border-radius: 3px;
   display: inline-block;
 }
-.dot.lived { background: var(--accent); }
-.dot.visited { background: var(--slate); }
+.dot.lived { background: var(--dark-brown); }
+.dot.visited { background: var(--beige); }
 
 .stat-row {
   display: flex;
@@ -622,10 +624,10 @@ footer {
 
 /* ---------- Selected Work Projects ---------- */
 .project-grid {
-  max-width: 1000px;
+  max-width: 1120px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 24px;
 }
 .project-card {
