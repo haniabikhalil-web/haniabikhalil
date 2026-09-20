@@ -46,7 +46,16 @@
       t.setAttribute("aria-selected", selected ? "true" : "false");
       t.setAttribute("tabindex", selected ? "0" : "-1");
       var panel = document.getElementById(t.getAttribute("aria-controls"));
-      if (panel) panel.hidden = !selected;
+      if (panel) {
+        panel.hidden = !selected;
+        if (selected) {
+          /* Content revealed by scroll-triggered IntersectionObserver can sit
+             at opacity:0 indefinitely inside a panel that was display:none —
+             force it visible the instant the panel is switched to. */
+          var pending = panel.querySelectorAll(".reveal:not(.is-visible)");
+          for (var i = 0; i < pending.length; i++) pending[i].classList.add("is-visible");
+        }
+      }
     });
   }
 

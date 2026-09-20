@@ -784,6 +784,32 @@ ul { margin: 0; padding: 0; list-style: none; }
 .mini p { color: var(--text-muted); font-size: 14.5px; margin-top: 5px; }
 .mini .card-tag { margin-top: 8px; display: block; }
 
+/* ------------------------------------------------------------- travel -- */
+
+.travel-map {
+  position: relative;
+  margin-top: 18px;
+  padding: 20px 18px 16px;
+  border-top: 1px solid var(--border);
+}
+.travel-map svg { width: 100%; height: auto; display: block; }
+.travel-map .region { fill: var(--bg-alt); stroke: var(--border); stroke-width: 1; }
+.travel-map .region.visited { fill: var(--accent); fill-opacity: 0.55; stroke: var(--accent-dark); }
+.travel-map .dot { fill: var(--dark-brown); }
+.travel-map-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  margin-top: 12px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.travel-map-legend span { display: inline-flex; align-items: center; gap: 6px; }
+.travel-map-legend i {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--accent-dark); display: inline-block;
+}
+
 /* --------------------------------------------------------- masar band -- */
 
 .masar {
