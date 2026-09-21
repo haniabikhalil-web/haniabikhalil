@@ -542,13 +542,11 @@ footer { border-top: 1px solid var(--border); padding: 56px 0 32px; }
 .stat .num { font-family: var(--serif); font-size: 2.1rem; color: var(--accent); }
 .stat .stat-label { font-size: 12.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); margin-top: 4px; }
 
-/* ---------- Reveal (very light) ---------- */
-.reveal { opacity: 0; transform: translateY(10px); transition: opacity 0.5s ease, transform 0.5s ease; }
-.reveal.is-visible { opacity: 1; transform: none; }
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  .reveal { opacity: 1; transform: none; transition: none; }
-}
+/* Note: scroll-reveal animation was removed — it was hiding content
+   (opacity:0) until JS detected scroll, which made sections appear
+   blank. .reveal is now a no-op class kept only for backward compatibility
+   with existing markup. */
+.reveal { opacity: 1; transform: none; }
 
 /* ========================================================== responsive == */
 @media (max-width: 980px) {
@@ -600,7 +598,7 @@ footer { border-top: 1px solid var(--border); padding: 56px 0 32px; }
 
 /* ---------- Insights list page additions ---------- */
 .article-list { display: block; }
-.article-card { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.article-list .article-card { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 .article-tag {
   display: inline-block; font-size: 11.5px; font-weight: 600; letter-spacing: 0.1em;
   text-transform: uppercase; color: var(--accent); margin-bottom: 10px;
@@ -619,7 +617,7 @@ footer { border-top: 1px solid var(--border); padding: 56px 0 32px; }
 a.contact-item:hover { color: var(--accent); }
 @media (max-width: 980px) {
   .contact-grid { grid-template-columns: 1fr; gap: 40px; }
-  .article-card { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .article-list .article-card { flex-direction: column; align-items: flex-start; gap: 8px; }
 }
 
 /* ---------- Coaching page: chapter break line ---------- */
