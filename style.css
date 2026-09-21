@@ -788,26 +788,41 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 .travel-map {
   position: relative;
-  margin-top: 18px;
-  padding: 20px 18px 16px;
-  border-top: 1px solid var(--border);
+  margin-top: 22px;
+  padding: 22px 20px 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-alt);
 }
-.travel-map svg { width: 100%; height: auto; display: block; }
-.travel-map .region { fill: var(--bg-alt); stroke: var(--border); stroke-width: 1; }
-.travel-map .region.visited { fill: var(--accent); fill-opacity: 0.55; stroke: var(--accent-dark); }
-.travel-map .dot { fill: var(--dark-brown); }
-.travel-map-legend {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px 16px;
-  margin-top: 12px;
+.travel-map svg { width: 100%; height: auto; display: block; overflow: visible; }
+.travel-map .grid-line { stroke: var(--border); stroke-width: 0.5; }
+.travel-map .region { fill: var(--accent); fill-opacity: 0.16; stroke: var(--accent); stroke-opacity: 0.4; stroke-width: 1; }
+.travel-map .city-dot { fill: var(--accent-dark); stroke: var(--bg); stroke-width: 1.5; }
+.travel-map .city-label {
+  font-family: var(--sans);
+  font-size: 6.5px;
+  font-weight: 600;
+  fill: var(--dark-brown);
+}
+.travel-map-caption {
+  margin-top: 14px;
   font-size: 12px;
   color: var(--text-muted);
+  text-align: center;
 }
-.travel-map-legend span { display: inline-flex; align-items: center; gap: 6px; }
-.travel-map-legend i {
-  width: 8px; height: 8px; border-radius: 50%;
-  background: var(--accent-dark); display: inline-block;
+.travel-map-caption strong { color: var(--text); font-weight: 600; }
+
+/* --------------------------------------------- expertise / sector rows -- */
+
+.expertise-block + .expertise-block { margin-top: 44px; }
+.expertise-block .subhead {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text);
+  margin-bottom: 16px;
 }
 
 /* --------------------------------------------------------- masar band -- */
