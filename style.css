@@ -907,7 +907,16 @@ footer {
   max-width: 34ch;
   margin-bottom: 22px;
 }
-.intro--home .intro-photo { max-width: 400px; justify-self: center; }
+.intro--home .intro-photo { max-width: 380px; justify-self: center; width: 100%; }
+.intro--home .intro-photo::before { display: none; }
+.intro--home .intro-photo img {
+  aspect-ratio: 10 / 11;
+  object-fit: cover;
+  object-position: 50% 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 18px 40px -22px rgba(92, 61, 36, 0.35);
+}
 
 .principle .num-tag {
   display: block;
@@ -966,7 +975,7 @@ footer {
   .build { grid-template-columns: 1fr; gap: 12px; padding: 40px 0; }
   .beyond-grid { grid-template-columns: 1fr 1fr; }
   .intro--home { padding: 48px 0 56px; }
-  .intro--home .intro-photo { max-width: 280px; order: 2; margin-top: 8px; }
+  .intro--home .intro-photo { max-width: 300px; order: 2; margin-top: 8px; }
 }
 @media (max-width: 480px) {
   .beyond-grid { grid-template-columns: 1fr; gap: 20px; }
