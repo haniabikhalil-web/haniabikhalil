@@ -892,3 +892,82 @@ footer {
 @media (max-width: 860px) {
   .numbered-grid, .rule-grid, .principles-row { grid-template-columns: 1fr; }
 }
+
+
+/* ============================================
+   Home + coaching refresh — additions only
+   ============================================ */
+.intro--home { padding: 72px 0 80px; }
+.home-title { font-size: clamp(2.6rem, 6vw, 4.2rem); margin-bottom: 16px; }
+.intro--home .home-tagline {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+  line-height: 1.4;
+  color: var(--dark-brown);
+  max-width: 34ch;
+  margin-bottom: 22px;
+}
+.intro--home .intro-photo { max-width: 400px; justify-self: center; }
+
+.principle .num-tag {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  color: var(--accent-dark);
+  margin-bottom: 8px;
+}
+.home-cta { margin-top: 40px; }
+.text-arrow {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--dark-brown);
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 2px;
+  transition: border-color 0.2s;
+}
+.text-arrow:hover { border-bottom-color: var(--accent-dark); }
+
+.build {
+  max-width: 980px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 56px;
+  align-items: start;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 52px 0;
+}
+.build-logo { width: clamp(150px, 20vw, 210px); height: auto; margin-top: 18px; }
+.build-body p { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 16px; max-width: 58ch; }
+.build-body .home-cta { margin-top: 24px; }
+
+.beyond-grid {
+  max-width: 980px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+.beyond-note {
+  text-align: center;
+  margin-top: 44px;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  color: var(--dark-brown);
+}
+.beyond-note + .home-cta { margin-top: 14px; }
+
+.coach-title { font-size: clamp(1.9rem, 4.6vw, 2.9rem); margin: 12px 0 20px; }
+.band-logo { width: 120px; height: auto; margin: 0 auto 18px; }
+
+@media (max-width: 860px) {
+  .build { grid-template-columns: 1fr; gap: 12px; padding: 40px 0; }
+  .beyond-grid { grid-template-columns: 1fr 1fr; }
+  .intro--home { padding: 48px 0 56px; }
+  .intro--home .intro-photo { max-width: 280px; order: 2; margin-top: 8px; }
+}
+@media (max-width: 480px) {
+  .beyond-grid { grid-template-columns: 1fr; gap: 20px; }
+}

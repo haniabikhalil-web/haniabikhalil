@@ -19,6 +19,10 @@ document.addEventListener('DOMContentLoaded', () => {
         tabPanels.forEach(p => p.classList.toggle('active', p.id === target));
       });
     });
+    // Deep links: /about/#professional or /about/#personal
+    const wanted = (location.hash || '').replace('#', '');
+    const hashBtn = Array.from(tabBtns).find(b => b.getAttribute('data-tab') === wanted + '-panel');
+    if (hashBtn) hashBtn.click();
   }
 
   // ---------- World map (About page only) ----------
